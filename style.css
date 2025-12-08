@@ -1,0 +1,92 @@
+/* Alapbeállítások (Sötét háttér, Világos szöveg) */
+body {
+    background-color: #333; /* Sötétszürke háttér */
+    color: #f0f0f0; /* Világos szöveg (fehér/szürke) */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Központi konténer a középre igazításhoz */
+.container {
+    max-width: 1200px; /* Maximális szélesség nagy képernyőkön */
+    margin: 0 auto; /* Középre igazítás */
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2em;
+}
+
+/* Flexbox elrendezés a logó galériához */
+.logo-gallery {
+    display: flex;
+    flex-wrap: wrap; /* Több sorba törés kis képernyőn */
+    justify-content: center; /* Logók vízszintes középre igazítása */
+    gap: 40px; /* Elemek közötti távolság */
+}
+
+/* Egyedi logó elem stílusa */
+.logo-item {
+    display: flex;
+    flex-direction: column; /* Logó felett a felirat */
+    align-items: center; /* Középre igazítja a logót és a feliratot */
+    text-decoration: none; /* Aláhúzás eltávolítása */
+    color: inherit; /* Örökli a világos szövegszínt */
+    transition: transform 0.3s ease; /* Animáció az egérmutató felett */
+}
+
+.logo-item:hover {
+    transform: translateY(-5px); /* Enyhe kiemelés rámutatáskor */
+}
+
+/* Logók stílusa */
+.logo-item img {
+    width: 100px; /* Alapértelmezett logó méret */
+    height: 100px;
+    object-fit: contain; /* Képarány megtartása */
+    border-radius: 10px;
+    background-color: #fff; /* Fehér háttér a színes logóknak */
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Weboldal név stílusa */
+.website-name {
+    margin-top: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #b3e5fc; /* Világoskék szín a kiemeléshez */
+}
+
+/* 📱 Reszponzivitás (Media Queries) */
+
+/* Tabletek (max. 768px szélességig) */
+@media (max-width: 768px) {
+    .logo-item img {
+        width: 80px;
+        height: 80px;
+    }
+    .logo-gallery {
+        gap: 30px;
+    }
+}
+
+/* Mobiltelefonok (max. 480px szélességig) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    .logo-item img {
+        width: 60px;
+        height: 60px;
+    }
+    /* Két oszlopra törés mobilon a jobb láthatóságért */
+    .logo-gallery {
+        /* A flex-wrap miatt ez nem feltétlenül szükséges, de finomhangolható */
+        gap: 20px; 
+    }
+}
